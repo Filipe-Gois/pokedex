@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/utils.dart';
+import 'package:pokedex/widgets/search_bar_custom.dart';
 
 class AppBarCustom extends StatefulWidget implements PreferredSizeWidget {
   final String name;
@@ -24,30 +25,34 @@ class _AppBarCustomState extends State<AppBarCustom> {
       ),
       toolbarHeight: 80,
       backgroundColor: ColorsApp.primary,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      title: Column(
         children: [
-          Image.asset("lib/assets/images/Pokeball.png"),
-          ElevatedButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(Colors.transparent),
-              elevation: WidgetStatePropertyAll(0),
-            ),
-            child: Row(
-              spacing: 15,
-              children: [
-                Text(
-                  widget.name,
-                  style: TextStyle(color: Colors.white),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset("lib/assets/images/Pokeball.png"),
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(Colors.transparent),
+                  elevation: WidgetStatePropertyAll(0),
                 ),
-                Icon(
-                  Icons.person,
-                  color: Colors.white,
+                child: Row(
+                  spacing: 15,
+                  children: [
+                    Text(
+                      widget.name,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
     );
